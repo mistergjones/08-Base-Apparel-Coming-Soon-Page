@@ -21,17 +21,20 @@ function validateForm(e) {
         // if valid, set the input box back to blank
         e.target[0].value = "";
         theActualErrorMessage.textContent = "";
-    } else {
+    } else if (emailAddress.length === 0) {
         // call a function to show error message as per design //
-
-        showAlert();
+        msg = "Email address cannot be blank";
+        showAlert(msg);
+    } else {
+        msg = "Please provide a valid email address";
+        showAlert(msg);
     }
 }
 
-function showAlert() {
+function showAlert(msg) {
     theActualErrorMessage.style.color = "red";
     theActualErrorMessage.style.margin = "20px";
-    theActualErrorMessage.textContent = "Please provide a valid email address";
+    theActualErrorMessage.textContent = msg;
 
     // get rid of the error message after 1 second
     setTimeout(() => {
