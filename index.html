@@ -19,57 +19,37 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
-
-        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-        <style>
-            .attribution {
-                font-size: 11px;
-                text-align: center;
-            }
-            .attribution a {
-                color: hsl(228, 45%, 44%);
-            }
-        </style>
     </head>
     <body>
-        <div class="content-container">
-            <div class="header-logo">
-                <!-- <img src="images/logo.svg" alt="" /> -->
+        <div class="main-container">
+            <div class="main-wrapper">
+                <div class="container">
+                    <img
+                        src="images/logo.svg"
+                        alt="base apparel"
+                        class="logo"
+                    />
+                    <div class="wrapper-content">
+                        <h1><span>We're</span> coming soon</h1>
+                        <p>
+                            Hello fellow shoppers! We're currently building our
+                            new fashion store. Add your email below to stay
+                            up-to-date with announcements and our launch deals.
+                        </p>
+                        <form class="form">
+                            <input
+                                type="text"
+                                placeholder="Email Address"
+                                class="email"
+                            />
+                            <input type="submit" value="" class="submit" />
+                        </form>
+                        <div class="errorMessageArea"></div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image RIGHT"></div>
-
-            <div class="LEFT">
-            <div class="glenAlign">
-            <h1>
-                <span class="h1-color">We're</span><br />
-                coming<br />
-                soon
-            </h1>
-            <p>
-                Hello fellow shoppers! We're currently building our new fashion
-                store. Add your email below to stay up-to-date with
-                announcements and our launch deals.
-            </p>
-            <div class="input-group">
-                <input type="text" class="input" placeholder="Email Address" />
-                <button class="btn btn--accent">
-                    <img class="icon" src="images/icon-arrow.svg" alt="" />
-                </button>
-            </div>
-          </div>
-        
-
+            <div class="image-wrapper"></div>
         </div>
-
-        <footer>
-            <p class="attribution">
-                Challenge by
-                <a
-                    href="https://www.frontendmentor.io?ref=challenge"
-                    target="_blank"
-                    >Frontend Mentor</a
-                >. Coded by <a href="https://www.glenjones.com.au">Glen Jones</a>.
-            </p>
-        </footer>
+        <script src="js/main.js"></script>
     </body>
 </html>

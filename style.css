@@ -1,235 +1,148 @@
 :root {
     --Primary-Desaturated-Red: hsl(0, 36%, 70%);
     --Primary-Soft-Red: hsl(0, 93%, 68%);
-
     --Neutral-Dark-Grayish-Red: hsl(0, 6%, 24%);
 }
 
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 62.5%;
-    background-image: linear-gradient(
-        135deg,
-        hsl(0, 0%, 100%),
-        hsl(0, 100%, 98%),
-        hsl(0, 80%, 86%),
-        hsl(0, 58%, 83%)
-    );
-    background-repeat: no-repeat;
+.main-container {
+    font-family: Josefin Sans, sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media screen and (max-width: 375px) {
-    .content-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.3fr 0.7fr 0.7fr 0.5fr 0.3fr;
-    }
+.main-wrapper {
+    background: url("images/bg-pattern-desktop.svg") no-repeat left top/cover;
+    min-height: 100vh;
+    flex: 0 0 53%;
+    padding-top: 6rem;
+}
 
-    .header-logo {
-        background-image: url("images/logo.svg");
-        background-repeat: no-repeat;
-        margin: 1rem 1rem;
-    }
+.image-wrapper {
+    background: url("images/hero-desktop.jpg") top/cover;
+    flex: 0 0 47%;
+    min-height: 100vh;
+}
 
-    .hero-image {
-        background-image: url("images/hero-mobile.jpg");
-        background-size: auto;
-        width: 375px;
-        height: 250px;
-        background-repeat: no-repeat;
-    }
+.container {
+    height: 90%;
+    width: 500px; /* make the width of the container 500px */
+    margin: auto; /*center the container by making left/right margins equal.*/
+}
 
-    h1 {
-        margin-top: 2rem;
-        text-align: center;
-        color: var(--Neutral-Dark-Grayish-Red);
-        font-size: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 1rem;
-    }
+.wrapper-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    .h1-color {
-        color: var(--Primary-Desaturated-Red);
-        font-weight: 200;
-    }
+.main-wrapper h1 {
+    font-size: 4rem;
+    color: var(--Neutral-Dark-Grayish-Red);
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 15px;
+    margin-bottom: 1rem;
+}
 
-    p {
-        margin-top: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        margin-bottom: 2rem;
+.main-wrapper h1 span {
+    font-weight: 300;
+    color: var(--Primary-Desaturated-Red);
+    display: block;
+}
 
-        color: var(--Primary-Desaturated-Red);
-        font-size: 1rem;
+.main-wrapper p {
+    color: var(--Primary-Desaturated-Red);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
 
-        line-height: 1.5;
-        text-align: justify;
-    }
+.form {
+    display: flex;
+    position: relative; /* required for the ARROW button */
+}
 
-    .input-group {
-        /* width: 80%; */
-        /* margin: 0 auto; */
-        margin-left: 2rem;
-        margin-right: 2rem;
-        border: 2px solid rgb(209, 169, 169);
-        border-radius: 40px;
-        display: flex;
-    }
+::placeholder {
+    color: var(--Primary-Desaturated-Red);
+}
 
-    .input {
-        border-radius: 40px;
-        outline: 0;
-        font-size: 1rem;
-        background: transparent;
-        border: none;
-        color: var(--Primary-Desaturated-Red);
-    }
+.email {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid hsl(0, 20%, 82%);
+    outline: none;
+    color: hsl(0, 34%, 74%);
+    background: transparent;
+}
 
-    ::placeholder {
-        color: var(--Primary-Desaturated-Red);
-        opacity: 1; /* Firefox */
-    }
+.submit {
+    height: 100%;
+    padding: 0 4rem; /* 0 top/bottom REM. 4 left/right rem */
+    border-radius: 2rem;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    position: absolute; /* so it can align at the end of the input field */
+    right: 0;
+    background: url("images/icon-arrow.svg") no-repeat center center,
+        linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
 
-    /*inside an input-group, make the .input border to zero*/
-    .input-group .input {
-        border: 0;
-        flex-grow: 1; /*make it grow to fit in all entire space */
-        padding-left: 2rem;
-    }
+.errorMessageArea {
+    display: block;
+}
 
-    .btn {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-radius: 40px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        border: 0;
-        cursor: pointer;
-        outline: 0;
-    }
-
-    .btn--accent {
-        background-image: linear-gradient(
+@media (max-width: 900px) {
+    body {
+        background: linear-gradient(
             135deg,
-            hsl(30, 40%, 86%),
-            hsl(0, 90%, 83%)
+            hsl(0, 0%, 100%),
+            hsl(0, 100%, 98%)
         );
+        min-height: 100vh;
     }
-}
-
-@media screen and (min-width: 376px) {
-    .content-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 0px 0px;
-        grid-template-areas: "LEFT RIGHT";
+    .main-container {
+        flex-direction: column-reverse;
+        padding-top: 100px;
     }
-    .LEFT {
-        grid-area: LEFT;
-
-        background-image: url("images/logo.svg");
-        width: 250px;
-        height: 50px;
-        background-repeat: no-repeat;
-        margin: 1rem 1rem;
-        width: 50%;
-    }
-    .RIGHT {
-        grid-area: RIGHT;
-        background-image: url("images/hero-desktop.jpg");
-        /* background-size: auto; */
-        width: 610px;
-        height: 800px;
-        /* background-repeat: no-repeat; */
-    }
-
-    .glenAlign {
+    .logo {
         position: absolute;
-        width: 50%;
-        top: 50%;
-        transform: translate(0, -50%);
+        left: 2rem;
+        top: 2rem;
     }
-
-    h1 {
-        text-align: left;
-        padding-left: 6rem;
-        color: var(--Neutral-Dark-Grayish-Red);
-        font-size: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 1rem;
+    .image-wrapper {
+        background: url("images/hero-mobile.jpg") no-repeat left top/cover;
+        flex: auto;
+        min-height: 30vh;
     }
-
-    .h1-color {
-        color: var(--Primary-Desaturated-Red);
-        font-weight: 200;
-    }
-
-    p {
-        margin-top: 1rem;
-        padding-left: 6rem;
-        padding-right: 6rem;
-        margin-bottom: 2rem;
-
-        color: var(--Primary-Desaturated-Red);
-        font-size: 1rem;
-
-        line-height: 1.5;
-        text-align: justify;
-    }
-
-    .input-group {
-        /* width: 80%; */
-        /* margin: 0 auto; */
-        margin-left: 6rem;
-        margin-right: 6rem;
-        border: 2px solid rgb(209, 169, 169);
-        border-radius: 40px;
-        display: flex;
-    }
-
-    .input {
-        border-radius: 40px;
-        outline: 0;
-        font-size: 1rem;
+    .main-wrapper {
         background: transparent;
-        border: none;
-        color: var(--Primary-Desaturated-Red);
+        min-height: auto;
+        flex: auto;
+        padding-top: 2rem;
     }
-
-    ::placeholder {
-        color: var(--Primary-Desaturated-Red);
-        opacity: 1; /* Firefox */
+    .main-wrapper h1 {
+        font-size: 2.5rem;
     }
-
-    /*inside an input-group, make the .input border to zero*/
-    .input-group .input {
-        border: 0;
-        flex-grow: 1; /*make it grow to fit in all entire space */
-        padding-left: 2rem;
+    .main-wrapper p {
+        font-size: 0.9rem;
     }
-
-    .btn {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-radius: 40px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        border: 0;
-        cursor: pointer;
-        outline: 0;
+    .submit {
+        padding: 0 2rem;
     }
-
-    .btn--accent {
-        background-image: linear-gradient(
-            135deg,
-            hsl(30, 40%, 86%),
-            hsl(0, 90%, 83%)
-        );
+    .container {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 0 2rem;
     }
 }
